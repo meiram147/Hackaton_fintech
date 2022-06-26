@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <body>
+	<nav class="navbar navbar-light bg-light container">
+	  <a class="navbar-brand logo-top" href="#">
+	    <img src="{% static 'img/Logo.png'%}" width="40" height="40" class="d-inline-block align-top" alt="" loading="lazy">
+	    Аналитика рассходов
+	  </a>
+	  <div class="contact-top">
+              	<h5>+77051697403</h5></a>
+      </div>
+	</nav>
+  	<section>
+  		<div class="container class_form">
+  			<h1 class="text-3">Заполни форму и получи анализ по прибыли</h1>
+  			<div class="row justify-content-center">
+  			<form action="{% url 'thanks' %}" method="POST" style="width: 50%;">
+				{% csrf_token %}
+				<label for="inputEmail3" class="col-sm-8 col-form-label">Имя:</label><br>
+				<input type="text" class="form-control" name="name">
+				<label for="inputEmail3" class="col-sm-8 col-form-label">Вид деятельности:</label><br>
+				<input type="text" class="form-control" name="position">
+			    <label for="inputEmail3" class="col-sm-8 col-form-label">Введите стоимость 1 услуги в тнг:</label><br>
+				<input type="number" size="5" min="1" max="99999"  class="form-control" name="one_transefer_income">
+				<label for="inputEmail3" class="col-sm-8 col-form-label">прочие рассходы (обед) в тнг:</label><br>
+			    <input type="number" size="5" min="1" max="99999" class="form-control" name="any_more_consumption">
+				<label for="inputEmail3" class="col-sm-8 col-form-label">затраты на одну услугу в тнг:</label><br>
+			    <input type="number" size="5" min="0" max="99999" class="form-control" name="one_refueling">
+				<label for="inputEmail3" class="col-sm-8 col-form-label">время работы за одну услугу в часах:</label><br>
+			    <input type="number" size="2" min="1" max="24" class="form-control" name="one_work_hours">
+				<label for="inputEmail3" class="col-sm-8 col-form-label">Введите график работы:</label><br>
+			    <input type="number" size="2" min="1" max="24" class="form-control" name="work_graph">
+				<label for="inputEmail3" class="col-sm-8 col-form-label">Введите сколько заказов вы сделали сегодня:</label><br>
+			    <input type="number" size="3" min="1" max="999" class="form-control" name="services">
+				<label for="inputEmail3" class="col-sm-8 col-form-label">Колличество заказов за день:</label><br>
+			    <input type="number" size="3" min="1" max="999" class="form-control" name="services_one_day">
+				<label for="inputEmail3" class="col-sm-8 col-form-label">Колличество рабочих дней в месяц:</label><br>
+			    <input type="number" size="2" min="1" max="31" class="form-control" name="work_day">
+				<label for="inputEmail3" class="col-sm-8 col-form-label">ЕСП за этот год:</label><br>
+			    <input type="number" size="5" min="1" max="99999" class="form-control" name="ESP">
+					<div class="">
+					</div>
+			  <div style="float: right;" class="form-group row">
+			      <button type="submit" class="btn btn-success">Выполнить</button>
+			  </div>
+			</form>
+			</div>
+  		</div>
+  	</section>
+{% endblock %}
