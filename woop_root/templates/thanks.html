@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <title>Прогноз</title>
+  </head>
+  <body>
+	<nav class="navbar navbar-light bg-light container">
+	  <a class="navbar-brand logo-top" href="#">
+	    <img src="{% static 'img/Logo.png'%}" width="40" height="40" class="d-inline-block align-top" alt="" loading="lazy">
+	    Аналитика рассходов
+	  </a>
+	  <div class="contact-top">
+                <a class="whatsapp-number" href="https://web.whatsapp.com/"></a>
+                <a class="telegram-number" href="https://t.me/"></a>
+              	<h5>+77051697403</h5></a>
+      </div>
+	</nav>
+
+  	<section>
+  		<div class="container">
+  			<CENTER style = 'margin-top: 3%; margin-bottom: 3%;'>
+				<h2>Прогноз дохода за 1 день</h2>
+				<br><h5>час вашей работы стоит: {{one_service}}тг  
+				<br> Затраты за услуги:{{one_transefer}}тг<br> Доход за 1 день в тнг: {{one_day_income}}тг
+			<br>Вы сделали сегодня: {{services_int}} услуг <br> Колличество проваленных услуг: {{failed_service}}
+			<h2>Прогноз дохода за 1 месяц</h2>
+			<h5><br>прогноз прибыли с учетом расходов и ЕСП на {{work_day_int}} рабочих дней в месяц: {{mount_income}}тг
+			<br>Прогноз колличества проваленных услуг за {{work_day_int}} рабочих дней в месяц: {{failed_service_mounth}} услуг
+			<br>Прогноз колличества выполненных услуг за {{work_day_int}} рабочих дней в месяц: {{services_mounth}} услуг
+			<br>Прогноз колличества расходов за {{work_day_int}} рабочих дней в месяц: {{one_transefer_mounth}}тнг</h5>
+			<h2>Прогноз дохода за 1 год</h2>
+			<h5><br>прогноз прибыли на 12 мясецв, с учетом расходов и ЕСП на {{work_day_int}} рабочих дней в месяц: {{mount_income_year}}тг
+			<br>Прогноз колличества проваленных услуг на 12 мясецв, за {{work_day_int}} рабочих дней в месяц: {{failed_service_mounth_yaer}} услуг
+			<br>Прогноз колличества выполненных услуг на 12 мясецв, за {{work_day_int}} рабочих дней в месяц: {{services_mounth_year}} услуг
+			<br>Прогноз колличества расходов на 12 мясецв, за {{work_day_int}} рабочих дней в месяц: {{one_transefer_mounth_year}}тнг</h5></CENTER>
+	</div>
+  	</section>
+
+{% endblock %}
+
